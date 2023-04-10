@@ -195,6 +195,8 @@ https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.
 
 ![image](https://user-images.githubusercontent.com/34915099/230968680-a24cd33f-ebbb-43b8-9214-382f98dfb715.png)
 
+Hieronder staat de logica voor de form validatie
+
 ```js
 /**
  * Creates a prediction of the amount of deaths based on age, diabetes, high blood pressure, and sex
