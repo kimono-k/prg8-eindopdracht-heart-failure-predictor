@@ -100,10 +100,57 @@ Om dit te kunnen zien check de link: https://kimono-k.github.io/prg8-eindopdrach
 Via nn.load heb ik het model ingeladen zonder papa.parse te gebruiken.
 
 # Level 2
+## Je hebt een scatterplot getekend om inzicht je data te krigen (alleen bij regression)
 
-- Je hebt een scatterplot getekend om inzicht je data te krigen (alleen bij regression)
-- Je hebt irrelevante data of foutieve data gefilterd --> YEP!
-- Je hebt variatie in je training voorbeelden om te zorgen dat het model op de gewenste manier getraind wordt. --> input velden trainen
+Het scatterplot is te vinden op https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/train.html
+
+Het scatterplot dat ik heb getekend.
+![image](https://user-images.githubusercontent.com/34915099/230967159-abb5ac22-f2d2-465d-9b30-231b232fa4af.png)
+
+
+## Je hebt irrelevante data of foutieve data gefilterd
+Ja, dit heb ik gedaan het probleem met de train data was dat er null values in de tabel tevoorschijn kwamen deze heb ik eruit gefilterd met de filter functie. In de console kun je de gelogde array controleren op waarheid.
+
+```js
+ // Slice data into test and training data
+  let trainData = data.slice(0, Math.floor(data.length * 0.8));
+  let testData = data.slice(Math.floor(data.length * 0.8) + 1);
+
+  // Filter out the unnecessary null values from test and training data
+  let filteredTrainData = trainData.filter(
+    (trainItem) => trainItem.age !== null
+  );
+  let filteredTestData = testData.filter((testItem) => testItem.age !== null);
+```
+
+## Je hebt variatie in je training voorbeelden om te zorgen dat het model op de gewenste manier getraind wordt.
+Ja, er is variatie doordat ik meerdere input velden heb gebruikt zoals, leeftijd, diabetes, geslacht, hoge bloeddruk.
+
+![image](https://user-images.githubusercontent.com/34915099/230968060-4af45457-22c0-4d7a-963a-5277eaf906a3.png)
+
+Variatie door meerdere inputs
+```js
+/**
+ * Adds items to the ML5 Neural Network
+ */
+function addItems(trainData, testData) {
+  for (let healthItem of trainData) {
+    let inputs = {
+      age: healthItem.age,
+      diabetes: healthItem.diabetes,
+      high_blood_pressure: healthItem.high_blood_pressure,
+      sex: healthItem.sex,
+    };
+
+    nn.addData(inputs, { death: healthItem.platelets });
+  }
+ 
+  // Normalize: Prevents that some columns have higher precedence than others
+  nn.normalizeData();
+
+  checkData(trainData, testData);
+}
+```
 
 # Level 3
 
@@ -119,16 +166,28 @@ Via nn.load heb ik het model ingeladen zonder papa.parse te gebruiken.
 - DISCLAIMER: ALLEEN TE VERKRIJGEN OP PROTOTYPE LEVEL 1
 
 # Prototype - Level 1
+## Er vindt geen training plaats in de uitwerking.
+Er vindt wel training plaats.
 
-- Er vindt geen training plaats in de uitwerking.
-- Je gebruikt het model dat je zelf vantevoren hebt getraind in heb prototype.
-- De uitwerking doet een voorspelling naar aanleiding van gebruiksinput.
+## Je gebruikt het model dat je zelf vantevoren hebt getraind in heb prototype.
+Ja, dat is het opgeslagen model in json. Check de pagina https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
+
+## De uitwerking doet een voorspelling naar aanleiding van gebruiksinput.
+Dat is mogelijk door de inputvelden in te voeren.
+https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
 # Prototype - Level 2
+## Je hebt een gebruiksvriendelijke interface gebouwd met een professionele uitstraling.
+Ik heb de UI netjes gestyled met CSS en een Monserrat font gedownload om het een nettere uitstraling te geven. Ook zijn er placeholders in de gebruikersvelden die de UI intuitiever maken voor de gebruiker.
 
-- Je hebt een gebruiksvriendelijke interface gebouwd met een professionele uitstraling.
+![image](https://user-images.githubusercontent.com/34915099/230968680-a24cd33f-ebbb-43b8-9214-382f98dfb715.png)
+
 
 # Prototype - Level 3
 
 - Je hebt een tweede variant van je prototype
 - Uitwerking gebouwd met een ander algoritme, met als doel om inzicht te krijgen in het verschil tussen de algoritmes. --> Beschrijf je bevindingen...
+
+# Mijn voorspelde totaalscore voor de opdracht
+- Ik denk dat ik 3 punten behaald voor de eindopdracht heb met de argumentatie en bewijzen.
+
