@@ -180,6 +180,34 @@ Er vindt wel training plaats.
 
 Ja, dat is het opgeslagen model in json. Check de pagina https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
+Data ingeladen via JSON
+
+```js
+/**
+ * Loading the heartfailure.csv file
+ */
+function loadData() {
+  // Create an ML5 Neural Network
+  nn = ml5.neuralNetwork(options);
+
+  /**
+   * Loads in the model
+   */
+  const modelInfo = {
+    model: "./model/model.json",
+    metadata: "./model/model_meta.json",
+    weights: "./model/model.weights.bin",
+  };
+
+  nn.load(modelInfo, () => {
+    console.log("Model loaded!");
+  });
+
+  // Show elements after loading
+  predictButton.style.display = "inline-block";
+}
+```
+
 ## De uitwerking doet een voorspelling naar aanleiding van gebruiksinput.
 
 Dat is mogelijk door de inputvelden in te voeren.
