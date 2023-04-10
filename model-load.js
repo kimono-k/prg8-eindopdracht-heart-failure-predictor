@@ -33,7 +33,9 @@ predictButton.addEventListener("click", (e) => {
   let highBloodPressureInputFieldValue = document.getElementById(
     "high-blood-pressure-input-field"
   ).value;
+
   let sexInputFieldValue = document.getElementById("sex-input-field").value;
+
   makePrediction(
     +ageInputFieldValue,
     +diabetesInputFieldValue,
@@ -175,7 +177,11 @@ async function finishedTraining(traindata = false, testData) {
  * Creates a prediction of the amount of deaths based on age, diabetes, high blood pressure, and sex
  */
 async function makePrediction(age, diabetes, high_blood_pressure, sex) {
-  if (age && diabetes < 2 && high_blood_pressure !== undefined && sex < 2) {
+  if (
+    (age && diabetes === 0) ||
+    (diabetes === 1 && high_blood_pressure !== undefined && sex === 0) ||
+    sex === 1
+  ) {
     const results = await nn.predict(
       {
         age: age,
@@ -188,13 +194,14 @@ async function makePrediction(age, diabetes, high_blood_pressure, sex) {
     const deathProb = results[0].death;
     console.log(deathProb);
     const deathEvent = deathProb >= 0.5 ? 1 : 0;
+
     if (deathEvent === 1) {
       resultDiv.innerText = `De patient krijgt een hartaanval ${deathEvent}`;
     } else {
       resultDiv.innerText = `De patient krijgt geen hartaanval`;
     }
   } else {
-    resultDiv.innerText = `Please fill in all the fields, numbskull!`;
+    resultDiv.innerText = `Please fill in all the fields correctly! The diabetes and sex field should be either 0 or 1 or you left fields empty`;
   }
 }
 

@@ -28,7 +28,6 @@ Voor deze applicatie wil ik door middel van een Neural Network een voorspelling 
 <b>Wat is de toegevoegde waarde van AI in jouw concept?</b>
 Het concept zal meerwaarde brengen voor doktoren om te beslissen een medische interventie ingezet moet worden op een patient gebaseerd op de overlevingskans. Hiermee worden eventuele zorgen en kosten bespaard.
 
-
 <b>Welke data heb je nodig en hoe kom je daar aan?</b>
 Ik heb een <i>Heart Failure Prediction</i> dataset nodig die afkomstig is van Kaggle.
 https://www.kaggle.com/datasets/marshuu/flowers
@@ -58,12 +57,15 @@ De eindgebruikers zijn doktoren die rationele beslssingen moeten maken om een me
 - Github broncode + live project.
 
 # Level 1
+
 ## Je prototype is in staat een model te trainen met data van Kaggle
+
 <br />
 Het model is trainbaar als je het model probeert te trainen via deze link:
 https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/train.html
 
 Training van het model:
+
 ```js
 // Op deze regel wordt het Neural Network getraind
 function startTraining(trainData, testData) {
@@ -85,21 +87,24 @@ function loadData() {
 ```
 
 ## Console berichten:
+
 ![image](https://user-images.githubusercontent.com/34915099/230963879-894b8ef0-b30d-4ee7-9cfb-c26fd90c0b4c.png)
 
 ## Je dient het model op te kunnen slaan<
+
 De afbeelding hieronder is bewijsmateriaal dat het model opgeslagen kan worden
 ![image](https://user-images.githubusercontent.com/34915099/230964537-f1dc4c8d-f340-4220-8339-7ad74ed1dd7e.png)
 
 ## Met de opgeslagen data moet je een voorspelling kunnen doen
+
 Om dit te kunnen zien check de link: https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
 ![image](https://user-images.githubusercontent.com/34915099/230965576-c38aad8d-e2f2-49d5-b79d-42c20da8951b.png)
 
-
 Via nn.load heb ik het model ingeladen zonder papa.parse te gebruiken.
 
 # Level 2
+
 ## Je hebt een scatterplot getekend om inzicht je data te krigen (alleen bij regression)
 
 Het scatterplot is te vinden op https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/train.html
@@ -107,28 +112,28 @@ Het scatterplot is te vinden op https://kimono-k.github.io/prg8-eindopdracht-hea
 Het scatterplot dat ik heb getekend.
 ![image](https://user-images.githubusercontent.com/34915099/230967159-abb5ac22-f2d2-465d-9b30-231b232fa4af.png)
 
-
 ## Je hebt irrelevante data of foutieve data gefilterd
+
 Ja, dit heb ik gedaan het probleem met de train data was dat er null values in de tabel tevoorschijn kwamen deze heb ik eruit gefilterd met de filter functie. In de console kun je de gelogde array controleren op waarheid.
 
 ```js
- // Slice data into test and training data
-  let trainData = data.slice(0, Math.floor(data.length * 0.8));
-  let testData = data.slice(Math.floor(data.length * 0.8) + 1);
+// Slice data into test and training data
+let trainData = data.slice(0, Math.floor(data.length * 0.8));
+let testData = data.slice(Math.floor(data.length * 0.8) + 1);
 
-  // Filter out the unnecessary null values from test and training data
-  let filteredTrainData = trainData.filter(
-    (trainItem) => trainItem.age !== null
-  );
-  let filteredTestData = testData.filter((testItem) => testItem.age !== null);
+// Filter out the unnecessary null values from test and training data
+let filteredTrainData = trainData.filter((trainItem) => trainItem.age !== null);
+let filteredTestData = testData.filter((testItem) => testItem.age !== null);
 ```
 
 ## Je hebt variatie in je training voorbeelden om te zorgen dat het model op de gewenste manier getraind wordt.
+
 Ja, er is variatie doordat ik meerdere input velden heb gebruikt zoals, leeftijd, diabetes, geslacht, hoge bloeddruk.
 
 ![image](https://user-images.githubusercontent.com/34915099/230968060-4af45457-22c0-4d7a-963a-5277eaf906a3.png)
 
 Variatie door meerdere inputs
+
 ```js
 /**
  * Adds items to the ML5 Neural Network
@@ -144,7 +149,7 @@ function addItems(trainData, testData) {
 
     nn.addData(inputs, { death: healthItem.platelets });
   }
- 
+
   // Normalize: Prevents that some columns have higher precedence than others
   nn.normalizeData();
 
@@ -166,28 +171,38 @@ function addItems(trainData, testData) {
 - DISCLAIMER: ALLEEN TE VERKRIJGEN OP PROTOTYPE LEVEL 1
 
 # Prototype - Level 1
+
 ## Er vindt geen training plaats in de uitwerking.
+
 Er vindt wel training plaats.
 
 ## Je gebruikt het model dat je zelf vantevoren hebt getraind in heb prototype.
+
 Ja, dat is het opgeslagen model in json. Check de pagina https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
 ## De uitwerking doet een voorspelling naar aanleiding van gebruiksinput.
+
 Dat is mogelijk door de inputvelden in te voeren.
 https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
 # Prototype - Level 2
+
 ## Je hebt een gebruiksvriendelijke interface gebouwd met een professionele uitstraling.
-Ik heb de UI netjes gestyled met CSS en een Monserrat font gedownload om het een nettere uitstraling te geven. Ook zijn er placeholders in de gebruikersvelden die de UI intuitiever maken voor de gebruiker. Ook is de predict button niet zichtbaar als het model niet geladen is.
+
+Ik heb de UI netjes gestyled met CSS en een Monserrat font gedownload om het een nettere uitstraling te geven. Ook zijn er placeholders in de gebruikersvelden die de UI intuitiever maken voor de gebruiker. Ook is de predict button niet zichtbaar als het model niet geladen is. In de model load is er client-side form validatie die netjes wordt afgehandeld als velden niet ingevuld zijn.
+
+https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
 ![image](https://user-images.githubusercontent.com/34915099/230968680-a24cd33f-ebbb-43b8-9214-382f98dfb715.png)
 
-
 # Prototype - Level 3
 
-- Je hebt een tweede variant van je prototype
+## Je hebt een tweede variant van je prototype
+
+Ik ben van plan om wellicht nog een decision tree variant van dit prototype te maken.
+
 - Uitwerking gebouwd met een ander algoritme, met als doel om inzicht te krijgen in het verschil tussen de algoritmes. --> Beschrijf je bevindingen...
 
 # Mijn voorspelde totaalscore voor de opdracht
-- Ik denk dat ik 3 punten behaald voor de eindopdracht heb met de argumentatie en bewijzen.
 
+- Ik denk dat ik 3 punten behaald voor de eindopdracht heb met de argumentatie en bewijzen.
