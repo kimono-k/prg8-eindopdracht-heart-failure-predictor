@@ -8,31 +8,55 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
     <script defer src="train.js" type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
-    <title>ML5 Neural Network Regression</title>
+    <title>PRG8 - Eindopdracht</title>
   </head>
 
   <body>
-    <div><h2>ML5 Neural Network Regression</h2></div>
-    <h3>Predict the price of a mobile phone based on its specs</h3>
-    <strong><label for="weight-input-field">Weight</label></strong>
+    <div><h2>Heart Attack Predictor ❤️</h2></div>
+    <p>
+      Predict if a patient is going to have a heart attack based on based on
+      age, diabetes, high blood pressure, and sex
+    </p>
+    <strong><label for="age-input-field">Age</label></strong>
     <br />
-    <input type="text" id="weight-input-field" placeholder="weight" />
-    <br />
-    <br />
-    <strong><label for="resoloution-input-field">Resoloution</label></strong>
-    <br />
-    <input type="text" id="resoloution-input-field" placeholder="Resoloution" />
+    <input type="text" id="age-input-field" placeholder="age" />
     <br />
     <br />
-    <strong><label for="ppi-input-field">PPI</label></strong>
+    <strong><label for="diabetes-input-field">Diabetes</label></strong>
     <br />
-    <input type="text" id="ppi-input-field" placeholder="PPI" />
+    <input
+      type="text"
+      id="diabetes-input-field"
+      placeholder="0 = no, 1 = yes"
+    />
     <br />
     <br />
-    <strong><label for="cores-input-field">Cores</label></strong>
+    <strong
+      ><label for="high-blood-pressure-input-field"
+        >High Blood Pressure</label
+      ></strong
+    >
     <br />
-    <input type="text" id="cores-input-field" placeholder="Cores" />
+    <input
+      type="text"
+      id="high-blood-pressure-input-field"
+      placeholder="e.g 20"
+    />
+    <br />
+    <br />
+    <strong><label for="sex-input-field">Sex</label></strong>
+    <br />
+    <input
+      type="text"
+      id="sex-input-field"
+      placeholder="0 = male, 1 = female"
+    />
     <br />
     <br />
     <button id="prediction-btn">Predict!</button>

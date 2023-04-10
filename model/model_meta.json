@@ -1,0 +1,1 @@
+{"inputUnits":[4],"outputUnits":1,"inputs":{"age":{"dtype":"number","min":40,"max":95},"diabetes":{"dtype":"number","min":0,"max":1},"high_blood_pressure":{"dtype":"number","min":0,"max":1},"sex":{"dtype":"number","min":0,"max":1}},"outputs":{"death":{"dtype":"number","min":25100,"max":850000}},"isNormalized":true}
