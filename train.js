@@ -171,7 +171,7 @@ async function makePrediction(age, diabetes, high_blood_pressure, sex) {
     age &&
     diabetes !== undefined &&
     high_blood_pressure !== undefined &&
-    sex !== undefined
+    sex < 2
   ) {
     const results = await nn.predict(
       {
