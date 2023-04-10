@@ -195,6 +195,40 @@ https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.
 
 ![image](https://user-images.githubusercontent.com/34915099/230968680-a24cd33f-ebbb-43b8-9214-382f98dfb715.png)
 
+```js
+/**
+ * Creates a prediction of the amount of deaths based on age, diabetes, high blood pressure, and sex
+ */
+async function makePrediction(age, diabetes, high_blood_pressure, sex) {
+  if (
+    (age && diabetes === 0) ||
+    (diabetes === 1 && high_blood_pressure !== undefined && sex === 0) ||
+    sex === 1
+  ) {
+    const results = await nn.predict(
+      {
+        age: age,
+        diabetes: diabetes,
+        high_blood_pressure: high_blood_pressure,
+        sex: sex,
+      },
+      () => console.log("Prediction successful!")
+    );
+    const deathProb = results[0].death;
+    console.log(deathProb);
+    const deathEvent = deathProb >= 0.5 ? 1 : 0;
+
+    if (deathEvent === 1) {
+      resultDiv.innerText = `De patient krijgt een hartaanval ${deathEvent}`;
+    } else {
+      resultDiv.innerText = `De patient krijgt geen hartaanval`;
+    }
+  } else {
+    resultDiv.innerText = `Please fill in all the fields correctly! The diabetes and sex field should be either 0 or 1 or you left fields empty`;
+  }
+}
+```
+
 # Prototype - Level 3
 
 ## Je hebt een tweede variant van je prototype
