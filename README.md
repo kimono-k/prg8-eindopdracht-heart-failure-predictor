@@ -70,6 +70,8 @@ function startTraining(trainData, testData) {
 }
 
 ## Data van Kaggle:
+
+```js
 function loadData() {
   Papa.parse("./data/heartfailure.csv", {
     download: true,
@@ -78,6 +80,7 @@ function loadData() {
     complete: (results) => createNeuralNetwork(results.data),
   });
 }
+```
 
 ## Console berichten:
 ![image](https://user-images.githubusercontent.com/34915099/230963879-894b8ef0-b30d-4ee7-9cfb-c26fd90c0b4c.png)
