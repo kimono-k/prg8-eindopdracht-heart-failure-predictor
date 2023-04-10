@@ -176,7 +176,7 @@ function addItems(trainData, testData) {
 
 Er vindt wel training plaats.
 
-## Je gebruikt het model dat je zelf vantevoren hebt getraind in heb prototype.
+## Je gebruikt het model dat je zelf vantevoren hebt getraind in het prototype.
 
 Ja, dat is het opgeslagen model in json. Check de pagina https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
