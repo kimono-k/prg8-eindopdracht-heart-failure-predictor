@@ -22,10 +22,12 @@ Scatterplot
 # Concept
 
 <b>Beschrijf kort het idee voor jouw applicatie</b>
+
 Voor deze applicatie wil ik door middel van een Neural Network een voorspelling hoe groot de kans is dat een persoon een hartaanval krijgt op basis leeftijd, diabetes, hoge bloeddruk en geslacht
 
 <b>Wat is de toegevoegde waarde van AI in jouw concept?</b>
 Het concept zal meerwaarde brengen voor doktoren om te beslissen een medische interventie ingezet moet worden op een patient gebaseerd op de overlevingskans. Hiermee worden eventuele zorgen en kosten bespaard.
+
 
 <b>Welke data heb je nodig en hoe kom je daar aan?</b>
 Ik heb een <i>Heart Failure Prediction</i> dataset nodig die afkomstig is van Kaggle.
@@ -56,7 +58,7 @@ De eindgebruikers zijn doktoren die rationele beslssingen moeten maken om een me
 - Github broncode + live project.
 
 # Level 1
-<b>Je prototype is in staat een model te trainen met data van Kaggle</b>
+## Je prototype is in staat een model te trainen met data van Kaggle
 <br />
 Het model is trainbaar als je het model probeert te trainen via deze link:
 https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/train.html
@@ -67,10 +69,7 @@ function startTraining(trainData, testData) {
   nn.train({ epochs: 10 }, () => finishedTraining(trainData, testData));
 }
 
-Data van Kaggle:
-/**
- * Loading the heartfailure.csv file
- */
+## Data van Kaggle:
 function loadData() {
   Papa.parse("./data/heartfailure.csv", {
     download: true,
@@ -80,15 +79,15 @@ function loadData() {
   });
 }
 
-Console berichten:
+## Console berichten:
 ![image](https://user-images.githubusercontent.com/34915099/230963879-894b8ef0-b30d-4ee7-9cfb-c26fd90c0b4c.png)
 
-<b>Je dient het model op te kunnen slaan</b>
+## Je dient het model op te kunnen slaan<
 <br />
 De afbeelding hieronder is bewijsmateriaal dat het model opgeslagen kan worden
 ![image](https://user-images.githubusercontent.com/34915099/230964537-f1dc4c8d-f340-4220-8339-7ad74ed1dd7e.png)
 
-<bMet de opgeslagen data moet je een voorspelling kunnen doen</b>
+## Met de opgeslagen data moet je een voorspelling kunnen doen
 <br />
 Om dit te kunnen zien check de link: https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
@@ -96,31 +95,6 @@ Om dit te kunnen zien check de link: https://kimono-k.github.io/prg8-eindopdrach
 
 
 Via nn.load heb ik het model ingeladen zonder papa.parse te gebruiken.
-
-/**
- * Loading the heartfailure.csv file
- */
-function loadData() {
-  // Create an ML5 Neural Network
-  nn = ml5.neuralNetwork(options);
-
-  /**
-   * Loads in the model
-   */
-  const modelInfo = {
-    model: "./model/model.json",
-    metadata: "./model/model_meta.json",
-    weights: "./model/model.weights.bin",
-  };
-
-  nn.load(modelInfo, () => {
-    console.log("Model loaded!");
-  });
-
-  // Show elements after loading
-  predictButton.style.display = "inline-block";
-}
-
 
 # Level 2
 
