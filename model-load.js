@@ -175,12 +175,7 @@ async function finishedTraining(traindata = false, testData) {
  * Creates a prediction of the amount of deaths based on age, diabetes, high blood pressure, and sex
  */
 async function makePrediction(age, diabetes, high_blood_pressure, sex) {
-  if (
-    age &&
-    diabetes !== undefined &&
-    high_blood_pressure !== undefined &&
-    sex < 2
-  ) {
+  if (age && diabetes < 2 && high_blood_pressure !== undefined && sex < 2) {
     const results = await nn.predict(
       {
         age: age,
