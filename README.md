@@ -178,7 +178,7 @@ https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.
 
 # Prototype - Level 2
 ## Je hebt een gebruiksvriendelijke interface gebouwd met een professionele uitstraling.
-Ik heb de UI netjes gestyled met CSS en een Monserrat font gedownload om het een nettere uitstraling te geven. Ook zijn er placeholders in de gebruikersvelden die de UI intuitiever maken voor de gebruiker.
+Ik heb de UI netjes gestyled met CSS en een Monserrat font gedownload om het een nettere uitstraling te geven. Ook zijn er placeholders in de gebruikersvelden die de UI intuitiever maken voor de gebruiker. Ook is de predict button niet zichtbaar als het model niet geladen is.
 
 ![image](https://user-images.githubusercontent.com/34915099/230968680-a24cd33f-ebbb-43b8-9214-382f98dfb715.png)
 
