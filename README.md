@@ -64,12 +64,14 @@ Het model is trainbaar als je het model probeert te trainen via deze link:
 https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/train.html
 
 Training van het model:
-// Op deze tegel wordt het Neural Network getraind
+```js
+// Op deze regel wordt het Neural Network getraind
 function startTraining(trainData, testData) {
   nn.train({ epochs: 10 }, () => finishedTraining(trainData, testData));
 }
+```
 
-## Data van Kaggle:
+## Data van Kaggle: https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
 
 ```js
 function loadData() {
