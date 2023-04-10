@@ -83,12 +83,10 @@ function loadData() {
 ![image](https://user-images.githubusercontent.com/34915099/230963879-894b8ef0-b30d-4ee7-9cfb-c26fd90c0b4c.png)
 
 ## Je dient het model op te kunnen slaan<
-<br />
 De afbeelding hieronder is bewijsmateriaal dat het model opgeslagen kan worden
 ![image](https://user-images.githubusercontent.com/34915099/230964537-f1dc4c8d-f340-4220-8339-7ad74ed1dd7e.png)
 
 ## Met de opgeslagen data moet je een voorspelling kunnen doen
-<br />
 Om dit te kunnen zien check de link: https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/model-load.html
 
 ![image](https://user-images.githubusercontent.com/34915099/230965576-c38aad8d-e2f2-49d5-b79d-42c20da8951b.png)
