@@ -263,10 +263,21 @@ async function makePrediction(age, diabetes, high_blood_pressure, sex) {
 
 ## Je hebt een tweede variant van je prototype
 
-Ik ben van plan om wellicht nog een decision tree variant van dit prototype te maken.
+De tweede variant kun je bekijken op de onderstaande link:
 
-- Uitwerking gebouwd met een ander algoritme, met als doel om inzicht te krijgen in het verschil tussen de algoritmes. --> Beschrijf je bevindingen...
+https://kimono-k.github.io/prg8-eindopdracht-heart-failure-predictor/decisiontree.html
+
+## Uitwerking gebouwd met een ander algoritme, met als doel om inzicht te krijgen in het verschil tussen de algoritmes. Beschrijf je bevindingen...
+
+De uitwerking heb ik uitgebouwd met de Decision Tree classifier met dezelfde data van Kaggle. Het inzicht wat ik verkegen heb hierdoor is dat de decision tree een confusion 4 variabelen tastbaar kan maken met boolean logica. Zo zie ik dat het patroon van een confusion matrix 4 kwadranten terugkeert dus:
+
+- true, true
+- false, false,
+- true, false
+- false, true
+
+Alle mogelijke combinaties zijn dan zichtbaar en bij een Neural Network zie je dit niet omdat er maar 1 output is van de variabelen die je wilt voorspellen.
 
 # Mijn voorspelde totaalscore voor de opdracht
 
-- Ik denk dat ik 3 punten behaald voor de eindopdracht heb met de argumentatie en bewijzen.
+- Ik denk dat ik 4 punten behaald voor de eindopdracht heb met de argumentatie en bewijzen.
