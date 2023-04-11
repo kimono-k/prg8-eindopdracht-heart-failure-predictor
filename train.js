@@ -186,9 +186,9 @@ async function makePrediction(age, diabetes, high_blood_pressure, sex) {
     console.log(deathProb);
     const deathEvent = deathProb >= 0.5 ? 1 : 0;
     if (deathEvent === 1) {
-      resultDiv.innerText = `De patient krijgt een hartaanval ${deathEvent}`;
+      resultDiv.innerText = `De patient krijgt een hartaanval -- De originele voorspelling is ${deathProb}`;
     } else {
-      resultDiv.innerText = `De patient krijgt geen hartaanval`;
+      resultDiv.innerText = `De patient krijgt geen hartaanval -- De originele voorspelling is ${deathProb}`;
     }
   } else {
     resultDiv.innerText = `Please fill in all the fields, numbskull!`;

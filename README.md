@@ -249,7 +249,7 @@ async function makePrediction(age, diabetes, high_blood_pressure, sex) {
     const deathEvent = deathProb >= 0.5 ? 1 : 0;
 
     if (deathEvent === 1) {
-      resultDiv.innerText = `De patient krijgt een hartaanval ${deathEvent}`;
+      resultDiv.innerText = `De patient krijgt een hartaanval -- Originele voorspelling = ${deathProb}`;
     } else {
       resultDiv.innerText = `De patient krijgt geen hartaanval`;
     }
