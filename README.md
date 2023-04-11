@@ -276,7 +276,7 @@ De uitwerking heb ik uitgebouwd met de Decision Tree classifier met dezelfde dat
 - true, false
 - false, true
 
-Alle mogelijke combinaties zijn dan zichtbaar en bij een Neural Network zie je dit niet omdat er maar 1 output is van de output variabel die je wilt voorspellen.
+Alle mogelijke combinaties zijn dan zichtbaar en bij een Neural Network zie je dit niet omdat er maar 1 output is van de output variabel die je wilt voorspellen. Neural Network past in dit geval minder goed bij mijn prototype want het geeft een direct antwoord of een patient een hartaanval krijgt. De decision tree geeft een overzicht van alle mogelijke combinaties, daarmee worden de cijfers inzichtelijker van welke patienten wel of geen hartaanval hebben gekregen. Deze informatie is waardevol voor doktoren en straalt meer vertrouwen uit.
 
 # Mijn voorspelde totaalscore voor de opdracht
 
