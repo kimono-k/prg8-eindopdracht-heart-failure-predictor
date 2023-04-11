@@ -276,7 +276,7 @@ De uitwerking heb ik uitgebouwd met de Decision Tree classifier met dezelfde dat
 - true, false
 - false, true
 
-Alle mogelijke combinaties zijn dan zichtbaar en bij een Neural Network zie je dit niet omdat er maar 1 output is van de variabelen die je wilt voorspellen.
+Alle mogelijke combinaties zijn dan zichtbaar en bij een Neural Network zie je dit niet omdat er maar 1 output is van de output variabel die je wilt voorspellen.
 
 # Mijn voorspelde totaalscore voor de opdracht
 
